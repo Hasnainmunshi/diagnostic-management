@@ -25,9 +25,9 @@ app.use(express.json());
 // CORS configuration
 const corsOptions = {
   origin: [
-    "https://diagnostic-management-6pxs.vercel.app",
+    "https://bespoke-brigadeiros-8769d5.netlify.app",
     "http://localhost:5173",
-    "https://shiny-fox-fa8271.netlify.app",
+    ,
     ,
   ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
