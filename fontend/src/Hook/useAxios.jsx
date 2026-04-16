@@ -7,7 +7,7 @@ import {
 } from "../../Utils"; // Utility functions
 
 const useAxios = axios.create({
-  baseURL: import.meta.env.NEXT_PUBLIC_API_URL,
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -42,7 +42,7 @@ useAxios.interceptors.response.use(
       try {
         const refreshToken = getRefreshToken();
         const res = await axios.post(
-          `import.meta.env.NEXT_PUBLIC_API_URL/refreshToken`,
+          `${import.meta.env.VITE_API_URL}/refreshToken`,
           {
             token: refreshToken,
           },
