@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const connectDB = async () => {
-  if (!process.env.MONGODB_URI) {
+  if (!process.env.MONGODB_URL) {
     console.error("MONGODB_URI is not defined in the environment variables.");
     process.exit(1);
   }
 
   try {
-    const mongoURI = `${process.env.MONGODB_URI}/DiagnosticDB`;
+    const mongoURI = `${process.env.MONGODB_URL}/DiagnosticDB`;
 
     mongoose.connection.on("connected", () => {
       console.log("MongoDB connected successfully");
