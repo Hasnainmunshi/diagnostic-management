@@ -26,6 +26,7 @@ app.use(express.json());
 const corsOptions = {
   origin: [
     "http://localhost:5173",
+    "https://shiny-fox-fa8271.netlify.app",
     "https://diagnostic-management-mq3c.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
