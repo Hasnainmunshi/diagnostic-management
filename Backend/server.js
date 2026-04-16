@@ -25,7 +25,7 @@ app.use(express.json());
 // CORS configuration
 const corsOptions = {
   origin: [
-    "https://bespoke-brigadeiros-8769d5.netlify.app",
+    "https://marvelous-torrone-afc1c4.netlify.app",
     "http://localhost:5173",
     ,
     ,
