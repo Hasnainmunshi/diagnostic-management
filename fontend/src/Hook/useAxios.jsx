@@ -7,7 +7,7 @@ import {
 } from "../../Utils"; // Utility functions
 
 const useAxios = axios.create({
-  baseURL: "http://localhost:5001/api",
+  baseURL: "https://diagnostic-management-1.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -24,7 +24,7 @@ useAxios.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 // Response Interceptor: Handle 401 errors (unauthorized), refresh the token, or redirect to login
@@ -41,9 +41,12 @@ useAxios.interceptors.response.use(
       originalRequest._retry = true;
       try {
         const refreshToken = getRefreshToken();
-        const res = await axios.post(`http://localhost:5001/api/refreshToken`, {
-          token: refreshToken,
-        });
+        const res = await axios.post(
+          `https://diagnostic-management-1.onrender.com/api/refreshToken`,
+          {
+            token: refreshToken,
+          },
+        );
         const newAccessToken = res.data.accessToken;
 
         setAccessToken(newAccessToken);
@@ -75,7 +78,7 @@ useAxios.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 
 export default useAxios;
