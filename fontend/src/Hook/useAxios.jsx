@@ -7,7 +7,7 @@ import {
 } from "../../Utils"; // Utility functions
 
 const useAxios = axios.create({
-  baseURL: "https://diagnostic-management-1.onrender.com/api",
+  baseURL: import.meta.env.NEXT_PUBLIC_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
