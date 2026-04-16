@@ -26,8 +26,7 @@ app.use(express.json());
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://cute-alpaca-261dbb.netlify.app",
-    "https://diagnostic-management-zrto.vercel.app",
+    "https://diagnostic-management-mq3c.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
