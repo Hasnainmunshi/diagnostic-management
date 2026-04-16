@@ -80,13 +80,8 @@ exports.doctorAppointment = async (req, res) => {
       .sort({ slotDate: -1 })
       .populate("userId", "name email profileImage address")
       .populate("centerId", "name address district upazila");
-    console.log("a...", appointments);
+    console.log("a...aaaaaa", appointments);
 
-    if (!appointments.length) {
-      return res
-        .status(404)
-        .json({ message: "No appointments found for this doctor" });
-    }
     return res.status(200).json({
       msg: "Appointments fetched successfully",
       appointment: appointments,
@@ -110,7 +105,7 @@ exports.uniquePatients = async (req, res) => {
     const appointments = await appointmentModel.find({ docId });
     const uniquePatientIds = [
       ...new Set(
-        appointments?.map((appointment) => appointment.userId.toString())
+        appointments?.map((appointment) => appointment.userId.toString()),
       ),
     ];
     const uniquePatients = await userModel.find({
@@ -238,7 +233,7 @@ exports.appointmentComplete = async (req, res) => {
         subject,
         text,
         html,
-        icsContent
+        icsContent,
       );
 
       res.status(200).json({
