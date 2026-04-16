@@ -42,7 +42,7 @@ useAxios.interceptors.response.use(
       try {
         const refreshToken = getRefreshToken();
         const res = await axios.post(
-          `https://diagnostic-management-1.onrender.com/api/refreshToken`,
+          `import.meta.env.NEXT_PUBLIC_API_URL/refreshToken`,
           {
             token: refreshToken,
           },
